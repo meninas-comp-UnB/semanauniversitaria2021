@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class PlayerMovimentation : MonoBehaviour
 {
-    public float speed = 2.5f;
 
-    Rigidbody2D rigidBody2D;
+    public float velH;
+    public float velV;
 
-
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
+
     void Update()
     {
-    float H = Input.GetAxis("Horizontal");
-    float V = Input.GetAxis("Vertical");
-    transform.Translate (new Vector3 (H*Time.deltaTime*speed, V*Time.deltaTime*speed, 0));
+        float H = Input.GetAxis("Horizontal");
+        transform.Translate(new Vector3 (H*velH*Time.deltaTime,0,0));
     }
 }
